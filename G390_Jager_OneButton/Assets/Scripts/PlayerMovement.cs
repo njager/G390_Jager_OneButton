@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     //member variables
+    [SerializeField] private LayerMask platformsLayermask;
     Rigidbody2D rB2D;
+    BoxCollider2D boxCollider2d;
     private int count;
 
     //public variables
@@ -15,11 +17,14 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed;
     
     public TextMeshProUGUI countText;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         rB2D = GetComponent<Rigidbody2D>();
+        boxCollider2d = transform.GetComponent<BoxCollider2D>();
         SetCountText();
     }
 
@@ -32,14 +37,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
-            int levelMask = LayerMask.GetMask("Level");
-
-            if (Physics2D.BoxCast(transform.position, new Vector2(1f, .1f), 0f, Vector2.down, .01f, levelMask))
-            {
-                Jump();
-            }
+            print("Jumped! 0 ");
+            Jump();
         }
         
         if (rB2D.transform.position.y <= -15f)
@@ -48,9 +49,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private bool IsGrounded()
+    {
+        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, .1f, platformsLayermask);
+        return raycastHit2d.collider != null;
+    }
+
     //adds y velocity
     void Jump()
     {
+        print("Jumped! 3 ");
         rB2D.velocity = new Vector2(rB2D.velocity.x, jumpSpeed);
     }
 
