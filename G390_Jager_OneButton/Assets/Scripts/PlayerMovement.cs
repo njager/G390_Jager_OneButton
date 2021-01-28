@@ -73,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count += 1;
-            audioSource.PlayOneShot(munchSFX);
 
             SetCountText();
         }
@@ -81,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         else if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
-            audioSource.PlayOneShot(cawSFX);
+
             Jump();
         }
     }
