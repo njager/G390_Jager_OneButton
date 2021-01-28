@@ -19,7 +19,14 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rB2D = GetComponent<Rigidbody2D>();
+        SetCountText();
+    }
+
+    //Updates count text with current data, displays win text
+    void SetCountText()
+    {
+        countText.text = "Coins: " + count.ToString();
     }
 
     // Update is called once per frame
