@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update, gets components and sets speed
     void Start()
     {
         rB2D = GetComponent<Rigidbody2D>();
@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
+        //if player has jumped and isn't holding space, add gravity
         if(!IsGrounded() && rB2D.velocity.y > 0)
         {
             if (!Input.GetKey(KeyCode.Space))
@@ -53,24 +54,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //if player falls off map, reset
         if (rB2D.transform.position.y <= -15f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
-    /*IEnumerator CheckForSpace()
-    {
-        while (!IsGrounded())
-        {
-            if (!Input.GetKey(KeyCode.Space) && rB2D.velocity.y > 0)
-            {
-                rB2D.velocity += Vector2.down * addGravity * Time.deltaTime;
-            }
-            yield return null;
-        }
-    }*/
-
+    //if player is on the ground
     private bool IsGrounded()
     {
         RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, .1f, platformsLayermask);
