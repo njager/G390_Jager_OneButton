@@ -537,7 +537,7 @@ MonoBehaviour:
   platformsLayermask:
     serializedVersion: 2
     m_Bits: 256
-  runSpeed: 10
+  runSpeed: 5
   jumpSpeed: 15
   addGravity: 55
   countText: {fileID: 2073386047}

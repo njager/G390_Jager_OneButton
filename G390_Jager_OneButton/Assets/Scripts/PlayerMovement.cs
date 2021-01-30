@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rB2D = GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
+        rB2D.velocity = new Vector2(runSpeed, rB2D.velocity.y);
         SetCountText();
     }
 
