@@ -539,6 +539,7 @@ MonoBehaviour:
     m_Bits: 256
   runSpeed: 10
   jumpSpeed: 15
+  addGravity: 55
   countText: {fileID: 2073386047}
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}

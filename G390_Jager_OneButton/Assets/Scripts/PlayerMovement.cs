@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     //public variables
     public float runSpeed;
     public float jumpSpeed;
+    public float addGravity;
     
     public TextMeshProUGUI countText;
     public Animator animator;
@@ -42,12 +43,32 @@ public class PlayerMovement : MonoBehaviour
             print("Jumped! 0 ");
             Jump();
         }
-        
+
+        if(!IsGrounded() && rB2D.velocity.y > 0)
+        {
+            if (!Input.GetKey(KeyCode.Space))
+            {
+                rB2D.velocity += Vector2.down * addGravity * Time.deltaTime;
+            }
+        }
+
         if (rB2D.transform.position.y <= -15f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+    /*IEnumerator CheckForSpace()
+    {
+        while (!IsGrounded())
+        {
+            if (!Input.GetKey(KeyCode.Space) && rB2D.velocity.y > 0)
+            {
+                rB2D.velocity += Vector2.down * addGravity * Time.deltaTime;
+            }
+            yield return null;
+        }
+    }*/
 
     private bool IsGrounded()
     {
