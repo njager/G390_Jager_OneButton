@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    [SerializeField] private Transform levelPart_Start;
     [SerializeField] private Transform levelPart_1;
 
         private void Awake()
     {
-        //Instantiate(levelPart_1, new Vector3(19, 3), Quaternion.identity);
-        SpawnLevelPart(new Vector3(19, 3));
+        
+        SpawnLevelPart(levelPart_Start.Find("EndPosition").position);
         SpawnLevelPart(new Vector3(19, 3) + new Vector3(10, 0));
         SpawnLevelPart(new Vector3(19, 3) + new Vector3(10 + 10, 0));
     }
