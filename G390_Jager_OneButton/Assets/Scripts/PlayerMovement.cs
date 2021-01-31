@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
-            print("Jumped! 0 ");
             Jump();
         }
 
@@ -71,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
     //adds y velocity
     void Jump()
     {
-        print("Jumped! 3 ");
         rB2D.velocity = new Vector2(rB2D.velocity.x, jumpSpeed);
     }
 
