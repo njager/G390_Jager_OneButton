@@ -401,7 +401,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelPart_Start: {fileID: 4783424142896413125, guid: a6fed6c2d40f8a748bc19ed96f4ed6e9, type: 3}
-  levelPart_1: {fileID: 4309348834024884202, guid: 147e97f745e069a41aa49ec9ed520af7, type: 3}
+  levelPartList:
+  - {fileID: 4309348834024884202, guid: 147e97f745e069a41aa49ec9ed520af7, type: 3}
+  - {fileID: 7568064549090392820, guid: de8f22ff52d9df84babe9f3aeec98b50, type: 3}
   player: {fileID: 1613864487}
 --- !u!4 &1383101095
 Transform:
