@@ -58,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        if (rB2D.velocity.x < runSpeed)
+        {
+            rB2D.velocity = new Vector2(runSpeed, rB2D.velocity.y);
+        }
     }
 
     //if player is on the ground
