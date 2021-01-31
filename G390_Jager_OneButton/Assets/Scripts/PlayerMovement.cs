@@ -97,12 +97,6 @@ public class PlayerMovement : MonoBehaviour
 
             SetCountText();
         }
-        //if the trigger is the enemy's head, kill enemy and jump
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            other.gameObject.SetActive(false);
-
-            Jump();
-        }
+        
     }
 }
