@@ -7,10 +7,12 @@ public class LevelGenerator : MonoBehaviour
     //private variables
     private const float PLAYER_DISTANCE_SPAWN_LEVEL_PART = 50f;
     private Vector3 lastEndPosition;
+    private int levelPartsSpawned;
 
     //level variables
     [SerializeField] private Transform levelPart_Start;
-    [SerializeField] private List<Transform> levelPartList;
+    [SerializeField] private List<Transform> levelPartEasyList;
+    [SerializeField] private List<Transform> levelPartHardList;
     [SerializeField] private Rigidbody2D player;
 
     //runs at the start of the application
@@ -40,9 +42,17 @@ public class LevelGenerator : MonoBehaviour
     //spawns parts at the end position of the last part
     private void SpawnLevelPart()
     {
-        Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
+        Transform chosenLevelPart;
+        // select easy parts first
+        chosenLevelPart = levelPartEasyList[Random.Range(0, levelPartEasyList.Count)];
+        // select hard parts after a certain number of parts
+        if (levelPartsSpawned > 5)
+        {
+            chosenLevelPart = levelPartHardList[Random.Range(0, levelPartHardList.Count)];
+        }
         Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
         lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
+        levelPartsSpawned++;
     }
     //sets spawned part's transform
     private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)

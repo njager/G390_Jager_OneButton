@@ -369,7 +369,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1383101093
 GameObject:
@@ -401,12 +401,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelPart_Start: {fileID: 4783424142896413125, guid: a6fed6c2d40f8a748bc19ed96f4ed6e9, type: 3}
-  levelPartList:
+  levelPartEasyList:
   - {fileID: 4309348834024884202, guid: 147e97f745e069a41aa49ec9ed520af7, type: 3}
   - {fileID: 7568064549090392820, guid: de8f22ff52d9df84babe9f3aeec98b50, type: 3}
   - {fileID: 3604113375033182642, guid: 8e2f36140f818c240a964e2954bfa1bc, type: 3}
   - {fileID: 897402157272349567, guid: 16b03c5ed0bd053478f6be4f1ae6c9ef, type: 3}
   - {fileID: 7355929502100777524, guid: 708cec531b51b144da0f10475b5f0bfd, type: 3}
+  levelPartHardList:
+  - {fileID: 4309348834024884202, guid: 87954d309a2487e43b1c24bdadbaa979, type: 3}
+  - {fileID: 8776935192332360018, guid: da3ef3b4b04c43240b7594167dd307b6, type: 3}
   player: {fileID: 1613864487}
 --- !u!4 &1383101095
 Transform:
@@ -747,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4783424142896413125, guid: a6fed6c2d40f8a748bc19ed96f4ed6e9, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4783424142896413125, guid: a6fed6c2d40f8a748bc19ed96f4ed6e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
