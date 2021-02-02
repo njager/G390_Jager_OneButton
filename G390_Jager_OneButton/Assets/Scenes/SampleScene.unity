@@ -412,6 +412,8 @@ MonoBehaviour:
   - {fileID: 8776935192332360018, guid: da3ef3b4b04c43240b7594167dd307b6, type: 3}
   - {fileID: 5338647526519250257, guid: 42602bc93c1a28548b60d5abfff58c99, type: 3}
   - {fileID: 4889770599663368079, guid: c091b5aede600ae439d346bce5110b34, type: 3}
+  - {fileID: 6619419577786337781, guid: 2f5d9835688323c4aa966dca4aa20ac4, type: 3}
+  - {fileID: 9009405795207542036, guid: 30ae341db422a7f42bbd940271d3a18b, type: 3}
   player: {fileID: 1613864487}
 --- !u!4 &1383101095
 Transform:

@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //if player falls off map, reset
-        if (rB2D.transform.position.y <= -100f)
+        if (rB2D.transform.position.y <= -50f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
